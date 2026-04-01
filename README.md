@@ -12,3 +12,6 @@ Open `index.html` in a browser.
 - Styling: `assets/styles.css`
 - Interactions: `assets/app.js`
 
+## Note
+
+This repo is intended to be public. Avoid committing private documents (resume, client screenshots with sensitive data, etc.).
