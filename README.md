@@ -14,4 +14,4 @@ Open `index.html` in a browser.
 
 ## Note
 
-This repo is intended to be public. Avoid committing private documents (resume, client screenshots with sensitive data, etc.).
+This repo is intended to be public. Only include documents you’re comfortable sharing publicly (resume, redacted screenshots, etc.).
