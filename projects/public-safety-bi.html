@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Public Safety BI Platform | Isac Newton J</title>
+    <meta name="description" content="Case study: Public Safety BI Platform (Police RMS and Fire/NFIRS) using Power BI, SQL Server, SSIS, SSAS." />
+    <link rel="icon" href="../assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <a class="brand" href="../index.html" aria-label="Back to home">
+          <span class="mark" aria-hidden="true"></span>
+          <span>
+            <span class="name">Isac Newton J</span>
+            <span class="tag">Case Study</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#contact" class="cta">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <div class="card hero-main reveal">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Police RMS & EZ Fire Records</div>
+          <h1 class="title">Public Safety BI Platform</h1>
+          <p class="sub">
+            Centralized BI platform for county-level Police and Fire agencies across the United States, covering high-volume
+            incident data and regulatory submissions (NFIRS), integrated with NCIC.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Power BI</span>
+            <span class="pill">SQL Server</span>
+            <span class="pill">SSIS</span>
+            <span class="pill">SSAS</span>
+            <span class="pill">ER Studio</span>
+            <span class="pill">Windows Server</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="grid2">
+          <div class="panel reveal">
+            <h3>Problem</h3>
+            <p>
+              Multiple systems and jurisdictions needed a single source of truth for incident analytics, operational reporting,
+              and forecasting, while keeping access secure and performance predictable.
+            </p>
+          </div>
+          <div class="panel reveal">
+            <h3>My Approach</h3>
+            <p>
+              Designed data marts and a warehouse, built incremental SSIS pipelines, shipped SSAS cubes with partitions and
+              role-based security, and delivered Power BI reports aligned to how officers and leadership work.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-title reveal">
+          <h2>What Shipped</h2>
+          <p>Highlights based on production delivery.</p>
+        </div>
+        <div class="timeline">
+          <div class="tl reveal">
+            <div class="top">
+              <div class="role">Data Warehouse + Data Marts</div>
+              <div class="when">Design + implementation</div>
+            </div>
+            <ul>
+              <li>Architected a Police Data Warehouse with 15 data marts supporting 8+ reporting workloads.</li>
+              <li>Defined business-friendly dimensions and facts for consistent KPI definitions.</li>
+            </ul>
+          </div>
+          <div class="tl reveal">
+            <div class="top">
+              <div class="role">Incremental ETL</div>
+              <div class="when">SSIS + SQL Agent</div>
+            </div>
+            <ul>
+              <li>Built full load and daily incremental SSIS packages using lookups and SCD transformations.</li>
+              <li>Reduced nightly DW load window by 35%+ through tuning and best practices.</li>
+            </ul>
+          </div>
+          <div class="tl reveal">
+            <div class="top">
+              <div class="role">Semantic Layer</div>
+              <div class="when">SSAS cubes</div>
+            </div>
+            <ul>
+              <li>Delivered 15 cubes for Police RMS and 10 cubes for Fire/NFIRS with KPIs and usage-based aggregations.</li>
+              <li>Implemented role-level security to control sensitive data by designation.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="impact">
+        <div class="section-title reveal">
+          <h2>Impact</h2>
+          <p>Measurable outcomes.</p>
+        </div>
+        <div class="grid2">
+          <div class="panel reveal">
+            <h3>Performance</h3>
+            <p>Cut ETL processing time by 40% and improved refresh reliability for enterprise reporting systems.</p>
+            <div class="chips">
+              <span class="chip hot">40% faster ETL</span>
+              <span class="chip">SLA compliance</span>
+              <span class="chip">Incremental loads</span>
+            </div>
+          </div>
+          <div class="panel reveal">
+            <h3>Adoption & Trust</h3>
+            <p>Improved report adoption by 30% and sustained 99% data accuracy across reporting pipelines.</p>
+            <div class="chips">
+              <span class="chip hot">30% adoption</span>
+              <span class="chip hot">99% accuracy</span>
+              <span class="chip">200+ users</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel reveal">
+          <h3>Note on Screenshots</h3>
+          <p>
+            Because these are client systems, I can share redacted screenshots on request. This portfolio focuses on architecture,
+            outcomes, and the techniques used.
+          </p>
+        </div>
+      </section>
+
+      <footer>
+        <div class="wrap foot">
+          <div><a href="../index.html">Back to home</a></div>
+          <div><a href="../index.html#contact">Contact</a></div>
+        </div>
+      </footer>
+    </main>
+
+    <script src="../assets/app.js"></script>
+  </body>
+</html>
+
