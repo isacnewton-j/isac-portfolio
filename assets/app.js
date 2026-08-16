@@ -37,3 +37,15 @@ function initCopyEmail() {
 initReveal();
 initCopyEmail();
 
+function initNavToggle() {
+  const btn = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("primary-nav");
+  if (!btn || !nav) return;
+  btn.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("open");
+    btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+}
+
+initNavToggle();
+
