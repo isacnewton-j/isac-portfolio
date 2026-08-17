@@ -49,3 +49,54 @@ function initNavToggle() {
 
 initNavToggle();
 
+// Resume PDF generator using jsPDF (loaded from CDN in pages)
+function initResumeDownload() {
+  async function makePdfFromMarkdown(src, filename) {
+    try {
+      const res = await fetch(src);
+      if (!res.ok) throw new Error('fetch failed');
+      const text = await res.text();
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+      const margin = 40;
+      const maxWidth = doc.internal.pageSize.getWidth() - margin * 2;
+      const lineHeight = 14;
+      const lines = doc.splitTextToSize(text, maxWidth);
+      let cursor = margin;
+      doc.setFontSize(11);
+      for (let i = 0; i < lines.length; i++) {
+        if (cursor + lineHeight > doc.internal.pageSize.getHeight() - margin) {
+          doc.addPage();
+          cursor = margin;
+        }
+        doc.text(lines[i], margin, cursor);
+        cursor += lineHeight;
+      }
+      doc.save(filename);
+    } catch (e) {
+      console.error(e);
+      alert('Could not generate PDF. Please try downloading the markdown file as a fallback.');
+    }
+  }
+
+  const btn = document.getElementById('download-resume');
+  if (btn) {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const src = btn.getAttribute('data-src');
+      makePdfFromMarkdown(src, 'Isac_Newton_J_Resume.pdf');
+    });
+  }
+  const btn2 = document.getElementById('download-resume-hr');
+  if (btn2) {
+    btn2.addEventListener('click', (e) => {
+      e.preventDefault();
+      const src = btn2.getAttribute('data-src');
+      makePdfFromMarkdown(src, 'Isac_Newton_J_Resume.pdf');
+    });
+  }
+}
+
+// Delay init to ensure jspdf is loaded via CDN script on the page
+window.addEventListener('DOMContentLoaded', () => setTimeout(initResumeDownload, 250));
+
