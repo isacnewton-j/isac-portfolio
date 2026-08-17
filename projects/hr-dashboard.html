@@ -76,19 +76,19 @@
       <section>
         <div class="panel reveal">
           <h3>Screenshots & Gallery</h3>
-          <p class="muted">Place your exported screenshots (recommended: PNG) into <code>projects/hr-assets/</code>. Files named <code>hr-hero.svg/png</code> and <code>hr-1.png</code> will appear here.</p>
+          <p class="muted">Screenshots: click any image to view a larger version.</p>
           <div class="gallery" style="display:grid; grid-template-columns: 2fr 1fr; gap:12px; margin-top:12px">
             <figure class="card" style="padding:0; overflow:hidden; min-height:260px; margin:0">
-              <img src="hr-assets/hr-hero.svg" alt="HR dashboard hero placeholder" style="width:100%; height:100%; object-fit:cover; display:block" />
+              <img id="hr-img-hero" src="hr-assets/hr-hero.svg" alt="HR dashboard hero" style="width:100%; height:100%; object-fit:cover; display:block" />
               <figcaption style="padding:10px 14px; font-weight:600; background:transparent; color:var(--muted2)">Overview</figcaption>
             </figure>
             <div style="display:grid; gap:8px">
               <figure style="margin:0">
-                <img src="hr-assets/hr-1.svg" alt="Chart placeholder" style="width:100%; border-radius:12px; display:block" />
+                <img id="hr-img-1" src="hr-assets/hr-1.svg" alt="Workforce demographics" style="width:100%; border-radius:12px; display:block" />
                 <figcaption style="padding:8px 10px; font-weight:600; color:var(--muted2)">Workforce Demographics</figcaption>
               </figure>
               <figure style="margin:0">
-                <img src="hr-assets/hr-2.svg" alt="Chart placeholder" style="width:100%; border-radius:12px; display:block" />
+                <img id="hr-img-2" src="hr-assets/hr-2.svg" alt="Retention and productivity" style="width:100%; border-radius:12px; display:block" />
                 <figcaption style="padding:8px 10px; font-weight:600; color:var(--muted2)">Retention &amp; Productivity</figcaption>
               </figure>
             </div>
@@ -96,41 +96,24 @@
         </div>
       </section>
 
-      <section>
-        <div class="panel reveal">
-          <h3>Measures & Model Notes</h3>
-          <p class="muted">Add a short list of your key DAX measures and a small data model diagram. Examples: active headcount, rolling attrition rate, time-to-hire median, rolling hires.</p>
-          <pre style="background:rgba(0,0,0,0.06); padding:12px; border-radius:8px; overflow:auto">// Example DAX
-CALCULATE(
-  DIVIDE([Leavers], [Headcount]),
-  DATESINPERIOD(Date[Date], LASTDATE(Date[Date]), -12, MONTH)
-)
-          </pre>
-        </div>
-      </section>
+      <!-- Data model section removed (viewer UI requested) -->
 
       <section>
         <div class="panel reveal">
-          <h3>Downloads & Privacy</h3>
-          <p class="muted">If you want to provide a downloadable PBIX for reviewers, place it at <code>projects/hr-assets/Isac-HR-Analysis.pbix</code>. Note: do NOT commit sensitive data. If you prefer to keep the PBIX private, leave it local — the portfolio page will still work with screenshots only.</p>
-          <div class="btnrow" style="margin-top:12px">
-            <a class="btn" href="hr-assets/Isac-HR-Analysis.pbix" download>Download PBIX (local only)</a>
-            <a class="btn" href="../index.html#contact">Request walkthrough</a>
-          </div>
+          <h3>Key measures (consumer summary)</h3>
+          <p class="muted">High-level measures used in the report — described for a non-technical audience.</p>
+          <ul style="margin-top:8px">
+            <li><strong>Active Headcount:</strong> Current employee count by department and role.</li>
+            <li><strong>Attrition Rate (rolling):</strong> Percentage of leavers over the prior 12 months to show trend.</li>
+            <li><strong>Time-to-hire (median):</strong> Median days to hire to highlight recruiting bottlenecks.</li>
+            <li><strong>Overtime Hours:</strong> Overtime by department to flag workload and capacity issues.</li>
+            <li><strong>Engagement Score (avg):</strong> Average engagement metric to track workforce sentiment.</li>
+          </ul>
+          <p class="muted" style="margin-top:12px">Technical details (data model, DAX, PBIX) are available on request for hiring managers or technical reviewers — contact me to request a secure review.</p>
         </div>
       </section>
 
-      <section>
-        <div class="panel reveal">
-          <h3>How to add your files (keeps them private)</h3>
-          <ol class="muted">
-            <li>Export 3–4 screenshots from Power BI Desktop: 1200px wide, PNG.</li>
-            <li>Copy screenshots to <code>projects/hr-assets/</code> or <code>projects/hr-assets/images/</code> inside this repository on your machine.</li>
-            <li>If you want to include the PBIX for local reviewers, copy it to the same folder — do NOT push to a public repo unless redacted.</li>
-            <li>Open <code>projects/hr-dashboard.html</code> in your browser (or run a local server) to verify images appear.</li>
-          </ol>
-        </div>
-      </section>
+      <!-- Access & privacy and local-file instructions removed for viewer-facing site -->
 
       <section>
         <div class="panel reveal">
@@ -156,38 +139,77 @@ CALCULATE(
       // Prefer local PNG/JPG assets if they exist in projects/hr-assets/
       (function preferLocalAssets(){
         const mapping = [
-          {sel: 'img[alt="HR dashboard hero placeholder"]', files: [
+          {id: 'hr-img-hero', files: [
             'hr-assets/hr-hero.png','hr-assets/hr-hero.jpg','hr-assets/hr-hero.jpeg',
             'hr-assets/images/hr-hero.png','hr-assets/images/hr-hero.jpg',
             'hr-assets/hr-hero-page1-overview.png','hr-assets/hr-hero-page1-overview.jpg',
             'hr-assets/images/hr-hero-page1-overview.png','hr-assets/images/hr-hero-page1-overview.jpg',
-            'hr-assets/hr-hero-page1-Overview.png','hr-assets/images/hr-hero-page1-Overview.png'
+            'hr-assets/hr-hero-page1-Overview.png','hr-assets/images/hr-hero-page1-Overview.png',
+            'hr-assets/hr-hero.png'
           ]},
-          {sel: 'img[alt="Chart placeholder"]', files: [
+          {id: 'hr-img-1', files: [
             'hr-assets/hr-1.png','hr-assets/hr-1.jpg','hr-assets/hr-1.jpeg',
             'hr-assets/images/hr-1.png','hr-assets/images/hr-1.jpg',
             'hr-assets/hr-page2-Workforce Dempgraphics.png','hr-assets/hr-page2-Workforce Dempgraphics.jpg',
-            'hr-assets/images/hr-page2-Workforce Dempgraphics.png','hr-assets/images/hr-page2-Workforce Dempgraphics.jpg'
+            'hr-assets/images/hr-page2-Workforce Dempgraphics.png','hr-assets/images/hr-page2-Workforce Dempgraphics.jpg',
+            'hr-assets/hr-page2-Workforce Dempgraphics.png',
+            'hr-assets/images/hr-page2-workforce-demographics.png','hr-assets/hr-page2-workforce-demographics.png'
           ]},
-          {sel: 'img[alt="Chart placeholder"]:nth-of-type(2)', files: [
+          {id: 'hr-img-2', files: [
             'hr-assets/hr-2.png','hr-assets/hr-2.jpg','hr-assets/hr-2.jpeg',
             'hr-assets/images/hr-2.png','hr-assets/images/hr-2.jpg',
             'hr-assets/hr-page3-Retention Productivity.png','hr-assets/hr-page3-Retention Productivity.jpg',
-            'hr-assets/images/hr-page3-Retention Productivity.png','hr-assets/images/hr-page3-Retention Productivity.jpg'
+            'hr-assets/images/hr-page3-Retention Productivity.png','hr-assets/images/hr-page3-Retention Productivity.jpg',
+            'hr-assets/hr-page3-Retention Productivity.png',
+            'hr-assets/images/hr-page3-retention-productivity.png','hr-assets/hr-page3-retention-productivity.png'
           ]}
         ];
+
         mapping.forEach(async (m) => {
           for (const f of m.files) {
             try {
               const res = await fetch(f, {method:'HEAD'});
               if (res.ok) {
-                const img = document.querySelector(m.sel);
+                const img = document.getElementById(m.id);
                 if (img) img.src = f;
                 break;
               }
             } catch(e){/* ignore */}
           }
         });
+
+        // Lightbox: open images in modal on click
+        function openLightbox(src){
+          const backdrop = document.querySelector('.lb-backdrop');
+          const lbImg = document.querySelector('.lb-content img');
+          lbImg.src = src;
+          backdrop.classList.add('open');
+        }
+        function closeLightbox(){
+          const backdrop = document.querySelector('.lb-backdrop');
+          const lbImg = document.querySelector('.lb-content img');
+          lbImg.src = '';
+          backdrop.classList.remove('open');
+        }
+
+        ['hr-img-hero','hr-img-1','hr-img-2'].forEach(id=>{
+          const el = document.getElementById(id);
+          if(!el) return;
+          el.style.cursor = 'zoom-in';
+          el.addEventListener('click', ()=> openLightbox(el.src));
+        });
+
+        // create lightbox DOM
+        const lb = document.createElement('div');
+        lb.className = 'lb-backdrop';
+        lb.innerHTML = `
+          <div class="lb-content"><img src="" alt="enlarged"/></div>
+          <button class="lb-close" aria-label="Close">Close</button>
+        `;
+        document.body.appendChild(lb);
+        lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLightbox(); });
+        lb.querySelector('.lb-close').addEventListener('click', closeLightbox);
+        document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLightbox(); });
       })();
     </script>
   </body>
