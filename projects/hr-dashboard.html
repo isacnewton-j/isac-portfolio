@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HR Analytics Dashboard | Isac Newton J</title>
+    <meta name="description" content="Case study: HR analytics dashboard project." />
+    <link rel="icon" href="../assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="wrap topbar-inner">
+        <a class="brand" href="../index.html" aria-label="Back to home">
+          <span class="mark" aria-hidden="true"></span>
+          <span>
+            <span class="name">Isac Newton J</span>
+            <span class="tag">Case Study</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#contact" class="cta">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="hero">
+        <div class="card hero-main reveal">
+          <div class="kicker"><span class="dot" aria-hidden="true"></span>Personal portfolio project</div>
+          <h1 class="title">HR Analytics Dashboard</h1>
+          <p class="sub">A recruiter-friendly case study showcasing the HR Analytics dashboard: model, key measures, UX, and impact.</p>
+          <div class="pillrow">
+            <span class="pill">Power BI</span>
+            <span class="pill">DAX</span>
+            <span class="pill">Power Query</span>
+            <span class="pill">Data Modeling</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel reveal">
+          <h3>Recruiter Summary</h3>
+          <p class="muted">Quick facts hiring managers and recruiters care about.</p>
+          <ul style="margin-top:8px">
+            <li><strong>Role:</strong> Power BI Developer — end-to-end analytics (modeling, DAX, UX, deployment).</li>
+            <li><strong>What it shows:</strong> Headcount &amp; retention trends, attrition drivers by department, hiring funnel and time-to-hire.</li>
+            <li><strong>Why it matters:</strong> Rapidly identifies high-attrition teams and hiring bottlenecks so HR can prioritize interventions.</li>
+          </ul>
+          <div class="btnrow" style="margin-top:12px">
+            <a class="btn primary" href="../assets/Isac_Newton_J_Resume.docx">Download resume</a>
+            <a class="btn" href="mailto:isacnewton3211@gmail.com">Email</a>
+            <a class="btn" href="../index.html#contact">Request walkthrough</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel reveal">
+          <h3>Summary</h3>
+          <p class="muted">Problem: Recruiters and HR leaders lacked a single view for attrition drivers, hiring funnel, and headcount trends. My role: end-to-end delivery — model, DAX, report UX, and packaging for sharing.</p>
+          <div style="margin-top:12px">
+            <strong>Stack:</strong> Power BI Desktop, DAX, Power Query, SQL Server (source), PBIRS (optional)
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel reveal">
+          <h3>Screenshots & Gallery</h3>
+          <p class="muted">Place your exported screenshots (recommended: PNG) into <code>projects/hr-assets/</code>. Files named <code>hr-hero.svg/png</code> and <code>hr-1.png</code> will appear here.</p>
+          <div class="gallery" style="display:grid; grid-template-columns: 2fr 1fr; gap:12px; margin-top:12px">
+            <figure class="card" style="padding:0; overflow:hidden; min-height:260px; margin:0">
+              <img src="hr-assets/hr-hero.svg" alt="HR dashboard hero placeholder" style="width:100%; height:100%; object-fit:cover; display:block" />
+              <figcaption style="padding:10px 14px; font-weight:600; background:transparent; color:var(--muted2)">Overview</figcaption>
+            </figure>
+            <div style="display:grid; gap:8px">
+              <figure style="margin:0">
+                <img src="hr-assets/hr-1.svg" alt="Chart placeholder" style="width:100%; border-radius:12px; display:block" />
+                <figcaption style="padding:8px 10px; font-weight:600; color:var(--muted2)">Workforce Demographics</figcaption>
+              </figure>
+              <figure style="margin:0">
+                <img src="hr-assets/hr-2.svg" alt="Chart placeholder" style="width:100%; border-radius:12px; display:block" />
+                <figcaption style="padding:8px 10px; font-weight:600; color:var(--muted2)">Retention &amp; Productivity</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel reveal">
+          <h3>Measures & Model Notes</h3>
+          <p class="muted">Add a short list of your key DAX measures and a small data model diagram. Examples: active headcount, rolling attrition rate, time-to-hire median, rolling hires.</p>
+          <pre style="background:rgba(0,0,0,0.06); padding:12px; border-radius:8px; overflow:auto">// Example DAX
+CALCULATE(
+  DIVIDE([Leavers], [Headcount]),
+  DATESINPERIOD(Date[Date], LASTDATE(Date[Date]), -12, MONTH)
+)
+          </pre>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel reveal">
+          <h3>Downloads & Privacy</h3>
+          <p class="muted">If you want to provide a downloadable PBIX for reviewers, place it at <code>projects/hr-assets/Isac-HR-Analysis.pbix</code>. Note: do NOT commit sensitive data. If you prefer to keep the PBIX private, leave it local — the portfolio page will still work with screenshots only.</p>
+          <div class="btnrow" style="margin-top:12px">
+            <a class="btn" href="hr-assets/Isac-HR-Analysis.pbix" download>Download PBIX (local only)</a>
+            <a class="btn" href="../index.html#contact">Request walkthrough</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel reveal">
+          <h3>How to add your files (keeps them private)</h3>
+          <ol class="muted">
+            <li>Export 3–4 screenshots from Power BI Desktop: 1200px wide, PNG.</li>
+            <li>Copy screenshots to <code>projects/hr-assets/</code> or <code>projects/hr-assets/images/</code> inside this repository on your machine.</li>
+            <li>If you want to include the PBIX for local reviewers, copy it to the same folder — do NOT push to a public repo unless redacted.</li>
+            <li>Open <code>projects/hr-dashboard.html</code> in your browser (or run a local server) to verify images appear.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section>
+        <div class="panel reveal">
+          <h3>Case Study</h3>
+          <p><strong>Summary / Problem:</strong> Talent and HR leaders lacked a single, trusted report to monitor headcount, attrition drivers, hiring funnel conversion, and productivity metrics. Teams relied on multiple spreadsheets and ad-hoc exports, which made it hard to spot trends and prioritize retention efforts.</p>
+
+          <p><strong>Role &amp; Solution:</strong> I led the end-to-end delivery: shaped a star-schema model, built robust Power Query transformations, and authored key DAX measures (rolling attrition rate, active headcount, time-to-hire median). The report UX emphasizes recruiter workflows — overview KPIs, drill-through to department-level drivers, and clear narrative captions to speed review. The solution is packaged for local PBIX review and PBIRS-ready distribution when needed.</p>
+
+          <p><strong>Impact:</strong> The dashboard surfaces clear diagnostics (example metrics shown: <em>47 leavers</em> and <em>77.1% retention</em>). It eliminated time-consuming manual joins, improved data trust for HR reviewers, and made it faster to identify high-attrition departments and prioritize interventions. If you have precise outcome numbers (adoption, time savings), I can add them here.</p>
+        </div>
+      </section>
+
+      <footer>
+        <div class="wrap foot">
+          <div><a href="../index.html">Back to home</a></div>
+          <div><a href="../index.html#contact">Contact</a></div>
+        </div>
+      </footer>
+    </main>
+
+    <script src="../assets/app.js"></script>
+    <script>
+      // Prefer local PNG/JPG assets if they exist in projects/hr-assets/
+      (function preferLocalAssets(){
+        const mapping = [
+          {sel: 'img[alt="HR dashboard hero placeholder"]', files: [
+            'hr-assets/hr-hero.png','hr-assets/hr-hero.jpg','hr-assets/hr-hero.jpeg',
+            'hr-assets/images/hr-hero.png','hr-assets/images/hr-hero.jpg',
+            'hr-assets/hr-hero-page1-overview.png','hr-assets/hr-hero-page1-overview.jpg',
+            'hr-assets/images/hr-hero-page1-overview.png','hr-assets/images/hr-hero-page1-overview.jpg',
+            'hr-assets/hr-hero-page1-Overview.png','hr-assets/images/hr-hero-page1-Overview.png'
+          ]},
+          {sel: 'img[alt="Chart placeholder"]', files: [
+            'hr-assets/hr-1.png','hr-assets/hr-1.jpg','hr-assets/hr-1.jpeg',
+            'hr-assets/images/hr-1.png','hr-assets/images/hr-1.jpg',
+            'hr-assets/hr-page2-Workforce Dempgraphics.png','hr-assets/hr-page2-Workforce Dempgraphics.jpg',
+            'hr-assets/images/hr-page2-Workforce Dempgraphics.png','hr-assets/images/hr-page2-Workforce Dempgraphics.jpg'
+          ]},
+          {sel: 'img[alt="Chart placeholder"]:nth-of-type(2)', files: [
+            'hr-assets/hr-2.png','hr-assets/hr-2.jpg','hr-assets/hr-2.jpeg',
+            'hr-assets/images/hr-2.png','hr-assets/images/hr-2.jpg',
+            'hr-assets/hr-page3-Retention Productivity.png','hr-assets/hr-page3-Retention Productivity.jpg',
+            'hr-assets/images/hr-page3-Retention Productivity.png','hr-assets/images/hr-page3-Retention Productivity.jpg'
+          ]}
+        ];
+        mapping.forEach(async (m) => {
+          for (const f of m.files) {
+            try {
+              const res = await fetch(f, {method:'HEAD'});
+              if (res.ok) {
+                const img = document.querySelector(m.sel);
+                if (img) img.src = f;
+                break;
+              }
+            } catch(e){/* ignore */}
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
+
